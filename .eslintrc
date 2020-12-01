@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    "prettier",
+    "unicorn" ,
+    "import"
+  ],
+  "extends": [
+    "airbnb-base/legacy",
+    "plugin:unicorn/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "eslint:recommended",
+    "prettier/unicorn"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "arrow-body-style": [2, "as-needed"],
+    "arrow-parens": [2, "as-needed"],
+    "func-names": [0, "as-needed"],
+    "no-confusing-arrow": 0,
+    "no-debugger": "off",
+    "no-console": 0,
+    "unicorn/prevent-abbreviations": "off",
+    "max-len": ["error", { "code": 100 }]
+  }
+}
