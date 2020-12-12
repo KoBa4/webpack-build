@@ -19,14 +19,12 @@ let devServer
 
 function reloadHtml() {
   const cache = {}
-  // const plugin = { name: 'CustomHtmlReloadPlugin' }
   this.hooks.compilation.tap('CustomHtmlReloadPlugin', compilation => {
     HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
       'CustomHtmlReloadPlugin',
       (data, cb) => {
         const orig = cache[data.outputName]
         const html = data.html
-        // plugin seems to emit on any unrelated change?
         if (orig && orig !== html) {
           devServer.sockWrite(devServer.sockets, 'content-changed')
         }
@@ -41,7 +39,6 @@ const optimization = () => {
   const configObj = {
     runtimeChunk: 'single',
     splitChunks: {
-      // chunks: 'all',
       cacheGroups: {
         // vendor: {
         //   test: /[\\/]node_modules[\\/]/,
@@ -81,7 +78,6 @@ const plugins = () => {
       },
     }),
     reloadHtml,
-    // new CustomHtmlReloadPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: `./css/${filename('css')}`,
