@@ -1,3 +1,4 @@
+/*
 const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
@@ -73,13 +74,13 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.h
 
 const plugins = () => {
   const basePlugins = [
-    /* new HtmlWebpackPlugin({
+    /!* new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html',
       minify: {
         collapseWhitespace: isProd,
       },
-    }), */
+    }), *!/
     ...PAGES.map(
       page =>
         new HtmlWebpackPlugin({
@@ -241,3 +242,4 @@ module.exports = {
     ],
   },
 }
+*/

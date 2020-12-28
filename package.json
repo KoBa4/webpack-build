@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development webpack",
-    "start": "cross-env NODE_ENV=development webpack serve --client-log-level error",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack serve --client-log-level error --config webpack.dev.js",
     "fonts": "node ttf2woff.js"
   },
   "keywords": [],
@@ -47,6 +47,9 @@
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
+    "posthtml-expressions": "^1.7.1",
+    "posthtml-include": "^1.6.0",
+    "posthtml-loader": "^2.0.1",
     "prettier": "^2.2.0",
     "safe-require": "^1.0.4",
     "sass": "^1.29.0",
