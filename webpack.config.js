@@ -68,15 +68,28 @@ const optimization = () => {
   return configObj
 }
 
+const PAGES_DIR = path.join(__dirname, 'src')
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.html'))
+
 const plugins = () => {
   const basePlugins = [
-    new HtmlWebpackPlugin({
+    /* new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html',
       minify: {
         collapseWhitespace: isProd,
       },
-    }),
+    }), */
+    ...PAGES.map(
+      page =>
+        new HtmlWebpackPlugin({
+          template: `${PAGES_DIR}/${page}`,
+          filename: `${page}`,
+          minify: {
+            collapseWhitespace: isProd,
+          },
+        }),
+    ),
     reloadHtml,
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({

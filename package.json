@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development webpack",
-    "start": "cross-env NODE_ENV=development webpack serve --client-log-level error"
+    "start": "cross-env NODE_ENV=development webpack serve --client-log-level error",
+    "fonts": "node ttf2woff.js"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +21,9 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
+    "@hayes0724/web-font-converter": "^1.0.5",
     "@nurminen/html-beautify-webpack-plugin": "^1.1.3",
+    "autoprefixer": "^10.1.0",
     "babel-loader": "^8.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.3.2",
