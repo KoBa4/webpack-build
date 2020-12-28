@@ -1,2 +1,12 @@
-// ../fonts/
-@include font-face("notosans", "../fonts/notosans", 400, normal, woff2 woff);
+/**
+ * = Font Face
+ *
+ * A mixin for writing @font-face rules in SASS.
+ * Create a font face rule. Embedded OpenType, WOFF2, WOFF, TrueType, and
+ * SVG files are automatically sourced.
+ *
+ * @author: Jonathan Neal <https://gist.github.com/jonathantneal>
+ * @url: <https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6>
+ *
+ * ========================================================================= */
+@include font-face(Notosans, "../fonts/notosans", 400, normal, woff2 woff);
