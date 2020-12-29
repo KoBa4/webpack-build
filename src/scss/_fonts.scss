@@ -9,4 +9,7 @@
  * @url: <https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6>
  *
  * ========================================================================= */
-@include font-face(Notosans, "../fonts/notosans", 400, normal, woff2 woff);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+// @include font-face(Notosans, "../fonts/notosans", 400, normal, woff2 woff);

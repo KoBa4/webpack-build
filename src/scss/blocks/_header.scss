@@ -1,0 +1,226 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
+  background-image:
+    radial-gradient(
+      rgba(0, 0, 0, 0.25) 25%,
+      rgba(0, 0, 0, 0) 55%
+    );
+  transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+
+  > * {
+    position: relative;
+    margin-top: 3.5rem;
+    transition: opacity 0.325s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: calc(-3.5rem - 1px);
+      display: block;
+      width: 1px;
+      height: calc(3.5rem + 1px);
+      background: $color-white;
+    }
+  }
+
+  > :first-child {
+    margin-top: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .logo {
+    border: solid 1px $color-white;
+    border-radius: 100%;
+    width: 5.5rem;
+    height: 5.5rem;
+    line-height: 5.5rem;
+
+    .icon {
+      position: relative;
+      border-bottom: none;
+      text-decoration: none;
+
+      &::before {
+        display: inline-block;
+        padding-top: calc(70% - 2rem);
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        font-style: normal;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-variant: normal;
+        font-size: 2rem;
+        line-height: 1;
+        text-rendering: auto;
+        text-transform: none !important;
+      }
+    }
+  }
+
+  .content {
+    border-style: solid;
+    border-color: $color-white;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    max-width: 100%;
+
+    .inner {
+      overflow: hidden;
+      padding: 3rem 2rem;
+      max-height: 40rem;
+      transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+      transition-delay: 0.25s;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 2;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+    }
+  }
+
+  nav {
+    .use-middle {
+      &::after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 1px);
+        top: 0;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: $color-white;
+      }
+
+      ul {
+        li {
+          &.is-middle {
+            border-left: 0;
+          }
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin-bottom: 0;
+      border: solid 1px $color-white;
+      border-radius: 4px;
+      padding-left: 0;
+
+      li {
+        border-left: solid 1px $color-white;
+        padding-left: 0;
+
+        a {
+          display: block;
+          border-bottom: 0;
+          padding: 0 1.25rem 0 1.45rem;
+          height: 2.75rem;
+          min-width: 7.5rem;
+          font-size: 0.8rem;
+          line-height: 2.75rem;
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.075);
+          }
+
+          &:active {
+            background-color: rgba(255, 255, 255, 0.175);
+          }
+        }
+
+        &:first-child {
+          border-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #header .content p br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #header > * {
+    margin-top: 2rem;
+  }
+
+  #header > *::before {
+    top: calc(-2rem - 1px);
+    height: calc(2rem + 1px);
+  }
+
+  #header .logo {
+    width: 4.75rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
+  }
+
+  #header .logo .icon::before {
+    font-size: 1.75rem;
+  }
+
+  #header .content .inner {
+    padding: 2.5rem 1rem;
+  }
+
+  #header .content p {
+    line-height: 1.875;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    padding: 1.5rem 0;
+  }
+
+  #header .content .inner {
+    padding: 2.5rem 0;
+  }
+
+  #header nav ul {
+    flex-direction: column;
+    min-width: 10rem;
+    max-width: 100%;
+  }
+
+  #header nav ul li {
+    border-top: solid 1px $color-white;
+    border-left: 0;
+  }
+
+  #header nav ul li:first-child {
+    border-top: 0;
+  }
+
+  #header nav ul li a {
+    width: 100%;
+    height: 3rem;
+    min-width: 0;
+    line-height: 3rem;
+  }
+
+  #header nav.use-middle::after {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+#footer {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+
+  .copyright {
+    margin-bottom: 0;
+    font-size: 0.6rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+}

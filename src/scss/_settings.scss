@@ -1,5 +1,109 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  vertical-align: baseline;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
 html {
   box-sizing: border-box;
+  font-size: 16pt;
 }
 
 *,
@@ -11,8 +115,28 @@ html {
 body {
   overflow-anchor: none;
   font-family: "asd", sans-serif;
-  background-color: var(--color-white);
+  line-height: 1;
+  -webkit-text-size-adjust: none; // stylelint-disable-line
+  background-color: $color-dark;
   scroll-behavior: smooth;
+}
+
+body.is-preload *,
+body.is-preload *::before,
+body.is-preload *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+body,
+input,
+select,
+textarea {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: $color-white;
 }
 
 img {
@@ -20,12 +144,14 @@ img {
 }
 
 a {
+  border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
   text-decoration: none;
   color: inherit;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 }
 
-.site-container {
-  overflow: hidden;
+a:hover {
+  border-bottom-color: transparent;
 }
 
 .is-hidden {
@@ -36,25 +162,20 @@ a {
   @include visually-hidden;
 }
 
-.btn-reset {
-  border: none;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
+@media screen and (max-width: 1680px) {
+  html {
+    font-size: 12pt;
+  }
 }
 
-.list-reset {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+@media screen and (max-width: 736px) {
+  html {
+    font-size: 11pt;
+  }
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1200px;
-}
-
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 10pt;
+  }
 }

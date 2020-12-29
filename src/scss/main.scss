@@ -4,12 +4,15 @@
 @import "vars";
 @import "settings";
 
-body {
-  background-color: #ccc;
-}
+/* ----------- 1.General --------------
+-------------------------------------- */
+@import "general";
 
-.container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
+/* ----------- 2.Typography -----------
+-------------------------------------- */
+@import "typography";
+
+/* ----------- 3.Elements ------------
+-------------------------------------- */
+@import "blocks/header";
+@import "blocks/footer";

@@ -5,10 +5,18 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Webpack Boilerplate</title>
 </head>
 <body>
-  <include src="html/header.html"></include>
-<!--  <img src="img/output.jpg" alt="out">-->
+  <div class="wrapper">
+    <include src="html/header.html"></include>
+    <div class="main" style="display: none;">
+      <each loop="item in [1,2,3]">
+        <p>{{ item }}</p>
+      </each>
+    </div>
+    <include src="html/footer.html" locals='{}'></include>
+  </div>
+  <div id="bg"></div>
 </body>
 </html>
