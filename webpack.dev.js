@@ -108,6 +108,7 @@ module.exports = {
           },
           'css-loader',
           'postcss-loader',
+          'group-css-media-queries-loader',
           'sass-loader',
         ],
       },
