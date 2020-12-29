@@ -5,6 +5,6 @@ convertAllFonts({
   pathIn: path.resolve(__dirname, 'src/fonts'),
   pathOut: path.resolve(__dirname, 'src/fonts'),
   outputFormats: ['.woff', '.woff2'],
-  inputFormats: ['.ttf', '.otf', '.svg'],
+  inputFormats: ['.ttf'],
   debug: false,
 })
