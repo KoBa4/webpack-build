@@ -37,7 +37,14 @@ const CSSLoader = {
       },
     },
     'css-loader',
-    'postcss-loader',
+    {
+      loader: 'postcss-loader',
+      options: {
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js'),
+        },
+      },
+    },
     'group-css-media-queries-loader',
     'sass-loader',
   ],
