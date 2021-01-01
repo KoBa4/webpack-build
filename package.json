@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev.js",
     "start": "cross-env NODE_ENV=production webpack serve --client-log-level error --config webpack/webpack.dev.js",
-    "fonts": "node ttf2woff.js"
+    "fonts": "./ttf2woff.js"
   },
   "keywords": [
     "webpack",
@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "focus-visible": "^5.2.0",
+    "lodash": "^4.17.20",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
@@ -48,6 +49,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
+    "meow": "^8.1.0",
     "mini-css-extract-plugin": "^1.3.3",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.2.2",
