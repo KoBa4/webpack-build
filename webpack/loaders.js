@@ -51,12 +51,14 @@ const CSSLoader = {
 }
 
 const IMGLoader = {
-  test: /\.(jpe?g|png|gif|svg)$/i,
+  test: /\.(jpe?g|png|webp|gif|svg)$/i,
   use: [
     {
-      loader: 'file-loader',
+      loader: 'webpack-image-resize-loader',
       options: {
-        name: isDev ? './img/[name].[ext]' : './img/[name].[contenthash:8].[ext]',
+        fileLoaderOptions: {
+          name: isDev ? './img/[name].[ext]' : './img/[name].[contenthash:8].[ext]',
+        },
       },
     },
   ],

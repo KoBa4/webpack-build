@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.dev.js",
-    "start": "cross-env NODE_ENV=production webpack serve --client-log-level error --config webpack/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack serve --client-log-level error --config webpack/webpack.dev.js",
     "fonts": "./ttf2woff.js"
   },
   "keywords": [
@@ -70,6 +70,7 @@
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",
     "webpack-dev-server": "^3.11.1",
+    "webpack-image-resize-loader": "^3.1.0",
     "webpack-merge": "^5.7.3"
   }
 }
