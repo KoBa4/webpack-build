@@ -51,7 +51,7 @@ const CSSLoader = {
 }
 
 const IMGLoader = {
-  test: /\.(jpe?g|png|webp|gif|svg)$/i,
+  test: /\.(jpe?g|png|webp|gif|tiff)$/i,
   use: [
     {
       loader: 'webpack-image-resize-loader',
@@ -59,9 +59,28 @@ const IMGLoader = {
         fileLoaderOptions: {
           name: isDev ? './img/[name].[ext]' : './img/[name].[contenthash:8].[ext]',
         },
+        imageminOptions: {
+          png: {
+            name: 'imagemin-optipng',
+            options: { interlaced: true, optimizationLevel: 7 },
+          },
+          jpeg: {
+            name: 'imagemin-jpegtran',
+            options: { progressive: true },
+          },
+          webp: {
+            name: 'imagemin-webp',
+            options: { quality: 100 },
+          },
+        },
       },
     },
   ],
+}
+
+const SVGLoader = {
+  test: /(icons).*\.svg$/,
+  use: ['svg-sprite-loader', 'svg-transform-loader', 'svgo-loader'],
 }
 
 const FONTLoader = {
@@ -82,5 +101,6 @@ module.exports = {
   HtmlLoader: HtmlLoader,
   CSSLoader: CSSLoader,
   IMGLoader: IMGLoader,
+  SVGLoader: SVGLoader,
   FONTLoader: FONTLoader,
 }

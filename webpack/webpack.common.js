@@ -44,6 +44,7 @@ module.exports = {
       loaders.JSLoader,
       loaders.CSSLoader,
       loaders.IMGLoader,
+      loaders.SVGLoader,
       loaders.FONTLoader,
     ],
   },
